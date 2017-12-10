@@ -1,7 +1,7 @@
 Package: tabularaster
 Type: Package
 Title: Tidy Tools for 'Raster' Data
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: c(
     person("Michael D.", "Sumner", , "mdsumner@gmail.com", c("aut", "cre"))
     )
@@ -20,9 +20,11 @@ Imports: dplyr, methods, raster, sp, spex (>= 0.4.0), spbabel (>=
 RoxygenNote: 6.0.1
 Suggests: covr, testthat, knitr, rmarkdown, sf, spdplyr
 VignetteBuilder: knitr
+URL: https://github.com/hypertidy/tabularaster
+BugReports: https://github.com/hypertidy/tabularaster/issues
 NeedsCompilation: no
-Packaged: 2017-08-05 04:04:11 UTC; mdsumner
+Packaged: 2017-12-10 20:48:40 UTC; mdsumner
 Author: Michael D. Sumner [aut, cre]
 Maintainer: Michael D. Sumner <mdsumner@gmail.com>
 Repository: CRAN
-Date/Publication: 2017-08-05 10:25:48 UTC
+Date/Publication: 2017-12-10 21:36:39 UTC
