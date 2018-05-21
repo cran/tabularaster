@@ -12,7 +12,7 @@
 
 <meta name="author" content="Michael D. Sumner" />
 
-<meta name="date" content="2017-12-11" />
+<meta name="date" content="2018-05-22" />
 
 <title>Tabularaster</title>
 
@@ -20,46 +20,256 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
 
-<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#header {
+text-align: center;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
 
 </head>
 
@@ -70,7 +280,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Tabularaster</h1>
 <h4 class="author"><em>Michael D. Sumner</em></h4>
-<h4 class="date"><em>2017-12-11</em></h4>
+<h4 class="date"><em>2018-05-22</em></h4>
 
 
 
@@ -85,7 +295,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>workers to bring <code>sf</code> support to <code>raster</code></li>
 </ul>
 <p>Extract the cell numbers of raster <code>r</code> that are co-located with object <code>q</code>. (The argument names are <code>x</code> and <code>query</code>).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cellnumbers</span>(r, q)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">cellnumbers</span>(r, q)</a></code></pre></div>
 <p>In the above example, <code>r</code> is any <em>raster</em> object and <code>q</code> is another spatial object, used as a query. Cell numbers can be extracted from any raster object, any of a <code>raster::raster</code>, <code>raster::stack</code> or <code>raster::brick</code>. It’s not really relevant what that object contains, as only the <em>dimensions</em> (number of cells in x and y) and the <em>extent</em> (geographic range in x and y) determine the result. The <code>r</code> object can actually not contain any data - this is a very powerful but seemingly under-used feature of the <code>raster</code> package.</p>
 <p>The object <code>q</code> may be any of <code>sf</code>, <code>sp</code> layer types or a matrix of raw coordinates (x-y). (‘Exotic’ <code>sf</code> types like GEOMETRYCOLLECTION or POLYHEDRALSURFACE, and mixed-topology layers are not yet supported - let me know if you really need this and we’ll make it work.)</p>
 <p>Tabularaster follows the basic principles of tidy data and <em>hypertidy data</em> and aspires to keep the software design out of your way and simply help to get the task done.</p>
@@ -93,15 +303,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="simple-examples" class="section level1">
 <h1>Simple examples</h1>
 <p>In straightforward usage, <code>cellnumbers</code> returns a tibble with <code>object_</code> to identify the spatial object by number, and <code>cell_</code> which is specific to the raster object, a function of its <code>extent</code>, <code>dim</code>ensions and <code>projection</code> (crs - coordinate reference system).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(raster)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(raster)</a></code></pre></div>
 <pre><code>## Loading required package: sp</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tabularaster)</code></pre></div>
-<pre><code>## 
-## Attaching package: 'tabularaster'</code></pre>
-<pre><code>## The following object is masked from 'package:raster':
-## 
-##     extentFromCells</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(r &lt;-<span class="st"> </span><span class="kw">raster</span>(volcano))</code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">library</span>(tabularaster)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">(r &lt;-<span class="st"> </span><span class="kw">raster</span>(volcano))</a></code></pre></div>
 <pre><code>## class       : RasterLayer 
 ## dimensions  : 87, 61, 5307  (nrow, ncol, ncell)
 ## resolution  : 0.01639344, 0.01149425  (x, y)
@@ -110,7 +315,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## data source : in memory
 ## names       : layer 
 ## values      : 94, 195  (min, max)</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(cell &lt;-<span class="st"> </span><span class="kw">cellnumbers</span>(r, <span class="kw">cbind</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>)))</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">(cell &lt;-<span class="st"> </span><span class="kw">cellnumbers</span>(r, <span class="kw">cbind</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>)))</a></code></pre></div>
 <pre><code>## Warning: projections not the same 
 ##     x: NA
 ## query: NA</code></pre>
@@ -119,17 +324,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ##     &lt;int&gt; &lt;dbl&gt;
 ## 1       1  2654</code></pre>
 <p>This cell number query can be then be used to drive other raster functions, like <code>extract</code> and <code>xyFromCell</code> and many others.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xyFromCell</span>(r, cell<span class="op">$</span>cell_)</code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">xyFromCell</span>(r, cell<span class="op">$</span>cell_)</a></code></pre></div>
 <pre><code>##        x   y
 ## [1,] 0.5 0.5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">raster<span class="op">::</span><span class="kw">extract</span>(r, cell<span class="op">$</span>cell_)</code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">raster<span class="op">::</span><span class="kw">extract</span>(r, cell<span class="op">$</span>cell_)</a></code></pre></div>
 <pre><code>##     
 ## 161</code></pre>
 <p>This is an extremely efficient way to drive extractions from raster objects, for performing the same query from multiple layers at different times. It’s also very useful for using <code>dplyr</code> to derive summaries, rather than juggling lists of extracted values, or different parts of raster objects.</p>
 <div id="as-tibble" class="section level2">
 <h2>as tibble</h2>
 <p>There is an <code>as_tibble</code> method with options for cell, dimension, and date.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)</code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">library</span>(dplyr)</a></code></pre></div>
 <pre><code>## 
 ## Attaching package: 'dplyr'</code></pre>
 <pre><code>## The following objects are masked from 'package:raster':
@@ -141,7 +346,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <pre><code>## The following objects are masked from 'package:base':
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as_tibble</span>(r)</code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">as_tibble</span>(r)</a></code></pre></div>
 <pre><code>## # A tibble: 5,307 x 2
 ##    cellvalue cellindex
 ##        &lt;dbl&gt;     &lt;int&gt;
@@ -156,8 +361,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ##  9       100         9
 ## 10       100        10
 ## # ... with 5,297 more rows</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b &lt;-<span class="st"> </span><span class="kw">brick</span>(r, r<span class="op">*</span><span class="dv">2</span>)
-<span class="kw">as_tibble</span>(b)</code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1">b &lt;-<span class="st"> </span><span class="kw">brick</span>(r, r<span class="op">*</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="kw">as_tibble</span>(b)</a></code></pre></div>
 <pre><code>## # A tibble: 10,614 x 3
 ##    cellvalue cellindex dimindex
 ##        &lt;dbl&gt;     &lt;int&gt;    &lt;int&gt;
@@ -172,7 +377,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ##  9       100         9        1
 ## 10       100        10        1
 ## # ... with 10,604 more rows</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as_tibble</span>(b, <span class="dt">cell =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(dimindex)) ## leave out the cell index</code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw">as_tibble</span>(b, <span class="dt">cell =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(dimindex)) ## leave out the cell index</a></code></pre></div>
 <pre><code>## # A tibble: 10,614 x 2
 ##    cellvalue dimindex
 ##        &lt;dbl&gt;    &lt;int&gt;
@@ -188,27 +393,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## 10       200        2
 ## # ... with 10,604 more rows</code></pre>
 <p>The date or date-time is used as the dimension index if present.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">btime &lt;-<span class="st"> </span><span class="kw">setZ</span>(b, <span class="kw">Sys.time</span>() <span class="op">+</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">10</span>))
-<span class="kw">as_tibble</span>(btime) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(dimindex) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">n =</span> <span class="kw">n</span>())</code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1">btime &lt;-<span class="st"> </span><span class="kw">setZ</span>(b, <span class="kw">Sys.time</span>() <span class="op">+</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">10</span>))</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="kw">as_tibble</span>(btime) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(dimindex) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">n =</span> <span class="kw">n</span>())</a></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
-##              dimindex     n
-##                &lt;dttm&gt; &lt;int&gt;
-## 1 2017-12-11 07:48:15  5307
-## 2 2017-12-11 07:48:24  5307</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as_tibble</span>(btime, <span class="dt">split_date =</span> <span class="ot">TRUE</span>)</code></pre></div>
+##   dimindex                n
+##   &lt;dttm&gt;              &lt;int&gt;
+## 1 2018-05-22 08:26:42  5307
+## 2 2018-05-22 08:26:51  5307</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw">as_tibble</span>(btime, <span class="dt">split_date =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## # A tibble: 10,614 x 5
 ##    cellvalue cellindex  year month   day
 ##        &lt;dbl&gt;     &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
-##  1       100         1  2017    12    11
-##  2       100         2  2017    12    11
-##  3       101         3  2017    12    11
-##  4       101         4  2017    12    11
-##  5       101         5  2017    12    11
-##  6       101         6  2017    12    11
-##  7       101         7  2017    12    11
-##  8       100         8  2017    12    11
-##  9       100         9  2017    12    11
-## 10       100        10  2017    12    11
+##  1       100         1  2018     5    22
+##  2       100         2  2018     5    22
+##  3       101         3  2018     5    22
+##  4       101         4  2018     5    22
+##  5       101         5  2018     5    22
+##  6       101         6  2018     5    22
+##  7       101         7  2018     5    22
+##  8       100         8  2018     5    22
+##  9       100         9  2018     5    22
+## 10       100        10  2018     5    22
 ## # ... with 10,604 more rows</code></pre>
 </div>
 </div>
@@ -227,26 +432,28 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="applied-example" class="section level1">
 <h1>Applied example</h1>
 <p>This example uses extracted data per polygon and uses base R to <code>lapply</code> across the list of values extracted per polygon. Here we show a more <code>dplyrish</code> version after extracting the cell numbers with <code>tabularaster</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tabularaster)
-## https://gis.stackexchange.com/questions/102870/step-by-step-how-do-i-extract-raster-values-from-polygon-overlay-with-q-gis-or
-
-<span class="kw">library</span>(raster)
-
-<span class="co"># Create integer class raster</span>
-r &lt;-<span class="st"> </span><span class="kw">raster</span>(<span class="dt">ncol=</span><span class="dv">36</span>, <span class="dt">nrow=</span><span class="dv">18</span>)
-r[] &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">runif</span>(<span class="kw">ncell</span>(r),<span class="dv">1</span>,<span class="dv">10</span>),<span class="dt">digits=</span><span class="dv">0</span>)
-
-<span class="co"># Create two polygons</span>
-cds1 &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">180</span>,<span class="op">-</span><span class="dv">20</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">160</span>,<span class="dv">5</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">60</span>, <span class="dv">0</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">160</span>,<span class="op">-</span><span class="dv">60</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">180</span>,<span class="op">-</span><span class="dv">20</span>))
-cds2 &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">80</span>,<span class="dv">0</span>), <span class="kw">c</span>(<span class="dv">100</span>,<span class="dv">60</span>), <span class="kw">c</span>(<span class="dv">120</span>,<span class="dv">0</span>), <span class="kw">c</span>(<span class="dv">120</span>,<span class="op">-</span><span class="dv">55</span>), <span class="kw">c</span>(<span class="dv">80</span>,<span class="dv">0</span>))
-polys &lt;-<span class="st"> </span><span class="kw">SpatialPolygonsDataFrame</span>(<span class="kw">SpatialPolygons</span>(<span class="kw">list</span>(<span class="kw">Polygons</span>(<span class="kw">list</span>(<span class="kw">Polygon</span>(cds1)), <span class="dv">1</span>), 
-                                                       <span class="kw">Polygons</span>(<span class="kw">list</span>(<span class="kw">Polygon</span>(cds2)), <span class="dv">2</span>))),<span class="kw">data.frame</span>(<span class="dt">ID=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)))
-
-## do extraction in abstract terms
-(cn &lt;-<span class="st"> </span><span class="kw">cellnumbers</span>(r, polys))</code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="kw">library</span>(tabularaster)</a>
+<a class="sourceLine" id="cb28-2" data-line-number="2">## https://gis.stackexchange.com/questions/102870/step-by-step-how-do-i-extract-raster-values-from-polygon-overlay-with-q-gis-or</a>
+<a class="sourceLine" id="cb28-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb28-4" data-line-number="4"><span class="kw">library</span>(raster)</a>
+<a class="sourceLine" id="cb28-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb28-6" data-line-number="6"><span class="co"># Create integer class raster</span></a>
+<a class="sourceLine" id="cb28-7" data-line-number="7">r &lt;-<span class="st"> </span><span class="kw">raster</span>(<span class="dt">ncol=</span><span class="dv">36</span>, <span class="dt">nrow=</span><span class="dv">18</span>)</a>
+<a class="sourceLine" id="cb28-8" data-line-number="8">r[] &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">runif</span>(<span class="kw">ncell</span>(r),<span class="dv">1</span>,<span class="dv">10</span>),<span class="dt">digits=</span><span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb28-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb28-10" data-line-number="10"><span class="co"># Create two polygons</span></a>
+<a class="sourceLine" id="cb28-11" data-line-number="11">cds1 &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">180</span>,<span class="op">-</span><span class="dv">20</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">160</span>,<span class="dv">5</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">60</span>, <span class="dv">0</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">160</span>,<span class="op">-</span><span class="dv">60</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">180</span>,<span class="op">-</span><span class="dv">20</span>))</a>
+<a class="sourceLine" id="cb28-12" data-line-number="12">cds2 &lt;-<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">80</span>,<span class="dv">0</span>), <span class="kw">c</span>(<span class="dv">100</span>,<span class="dv">60</span>), <span class="kw">c</span>(<span class="dv">120</span>,<span class="dv">0</span>), <span class="kw">c</span>(<span class="dv">120</span>,<span class="op">-</span><span class="dv">55</span>), <span class="kw">c</span>(<span class="dv">80</span>,<span class="dv">0</span>))</a>
+<a class="sourceLine" id="cb28-13" data-line-number="13">polys &lt;-<span class="st"> </span><span class="kw">SpatialPolygonsDataFrame</span>(<span class="kw">SpatialPolygons</span>(<span class="kw">list</span>(<span class="kw">Polygons</span>(<span class="kw">list</span>(<span class="kw">Polygon</span>(cds1)), <span class="dv">1</span>), </a>
+<a class="sourceLine" id="cb28-14" data-line-number="14">                                                       <span class="kw">Polygons</span>(<span class="kw">list</span>(<span class="kw">Polygon</span>(cds2)), <span class="dv">2</span>))),<span class="kw">data.frame</span>(<span class="dt">ID=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)))</a>
+<a class="sourceLine" id="cb28-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb28-16" data-line-number="16">## do extraction in abstract terms</a>
+<a class="sourceLine" id="cb28-17" data-line-number="17">(cn &lt;-<span class="st"> </span><span class="kw">cellnumbers</span>(r, polys))</a></code></pre></div>
 <pre><code>## Warning: projections not the same 
 ##     x: +proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0
 ## query: NA</code></pre>
+<pre><code>## Warning in cellnumbers.default(r, polys): cellnumbers is very slow for
+## SpatialPolygons, consider conversion with 'sf::st_as_sf'</code></pre>
 <pre><code>## # A tibble: 63 x 2
 ##    object_ cell_
 ##      &lt;int&gt; &lt;dbl&gt;
@@ -261,95 +468,96 @@ polys &lt;-<span class="st"> </span><span class="kw">SpatialPolygonsDataFrame</s
 ##  9       1   334
 ## 10       1   335
 ## # ... with 53 more rows</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
-## now perform extraction for real
-## and pipe into grouping by polygon (object_) and value, and
-## calculate class percentage from class counts per polygon
-cn <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">v =</span> raster<span class="op">::</span><span class="kw">extract</span>(r, cell_)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(object_, v) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">count =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">v.pct =</span> count <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(count)) </code></pre></div>
-<pre><code>## # A tibble: 19 x 4
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">## now perform extraction for real</a>
+<a class="sourceLine" id="cb32-3" data-line-number="3">## and pipe into grouping by polygon (object_) and value, and</a>
+<a class="sourceLine" id="cb32-4" data-line-number="4">## calculate class percentage from class counts per polygon</a>
+<a class="sourceLine" id="cb32-5" data-line-number="5">cn <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">v =</span> raster<span class="op">::</span><span class="kw">extract</span>(r, cell_)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(object_, v) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarize</span>(<span class="dt">count =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">v.pct =</span> count <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(count)) </a></code></pre></div>
+<pre><code>## # A tibble: 20 x 4
 ## # Groups:   object_ [2]
-##    object_     v count      v.pct
-##      &lt;int&gt; &lt;dbl&gt; &lt;int&gt;      &lt;dbl&gt;
-##  1       1     1     4 0.10526316
-##  2       1     2     4 0.10526316
-##  3       1     3     2 0.05263158
-##  4       1     4     2 0.05263158
-##  5       1     5     3 0.07894737
-##  6       1     6     6 0.15789474
-##  7       1     7     7 0.18421053
-##  8       1     8     5 0.13157895
-##  9       1     9     5 0.13157895
-## 10       2     1     1 0.04000000
-## 11       2     2     3 0.12000000
-## 12       2     3     2 0.08000000
-## 13       2     4     2 0.08000000
-## 14       2     5     2 0.08000000
-## 15       2     6     2 0.08000000
-## 16       2     7     3 0.12000000
-## 17       2     8     2 0.08000000
-## 18       2     9     6 0.24000000
-## 19       2    10     2 0.08000000</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## here is the traditional code used in the stackoverflow example
-<span class="co"># Extract raster values to polygons                             </span>
-<span class="co">#( v &lt;- extract(r, polys) )</span>
-<span class="co"># Get class counts for each polygon</span>
-<span class="co">#v.counts &lt;- lapply(v,table)</span>
-<span class="co"># Calculate class percentages for each polygon</span>
-<span class="co">#( v.pct &lt;- lapply(v.counts, FUN=function(x){ x / sum(x) } ) )</span></code></pre></div>
+##    object_     v count  v.pct
+##      &lt;int&gt; &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;
+##  1       1     1     1 0.0263
+##  2       1     2     2 0.0526
+##  3       1     3     6 0.158 
+##  4       1     4     4 0.105 
+##  5       1     5     4 0.105 
+##  6       1     6     6 0.158 
+##  7       1     7     4 0.105 
+##  8       1     8     8 0.211 
+##  9       1     9     2 0.0526
+## 10       1    10     1 0.0263
+## 11       2     1     2 0.08  
+## 12       2     2     3 0.12  
+## 13       2     3     3 0.12  
+## 14       2     4     3 0.12  
+## 15       2     5     1 0.04  
+## 16       2     6     5 0.2   
+## 17       2     7     1 0.04  
+## 18       2     8     4 0.16  
+## 19       2     9     2 0.08  
+## 20       2    10     1 0.04</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1">## here is the traditional code used in the stackoverflow example</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2"><span class="co"># Extract raster values to polygons                             </span></a>
+<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="co">#( v &lt;- extract(r, polys) )</span></a>
+<a class="sourceLine" id="cb34-4" data-line-number="4"><span class="co"># Get class counts for each polygon</span></a>
+<a class="sourceLine" id="cb34-5" data-line-number="5"><span class="co">#v.counts &lt;- lapply(v,table)</span></a>
+<a class="sourceLine" id="cb34-6" data-line-number="6"><span class="co"># Calculate class percentages for each polygon</span></a>
+<a class="sourceLine" id="cb34-7" data-line-number="7"><span class="co">#( v.pct &lt;- lapply(v.counts, FUN=function(x){ x / sum(x) } ) )</span></a></code></pre></div>
 </div>
 <div id="extract-cell-numbers" class="section level1">
 <h1>Extract cell numbers</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tabularaster)
-<span class="kw">data</span>(<span class="st">&quot;ghrsst&quot;</span>)  ## a RasterLayer
-<span class="kw">data</span>(<span class="st">&quot;sst_regions&quot;</span>) ## a polygon layer, contiguous with ghrsst
-
-gcells &lt;-<span class="st"> </span><span class="kw">cellnumbers</span>(ghrsst, sst_regions) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">object_ =</span> <span class="kw">as.integer</span>(object_))
-
-result &lt;-<span class="st"> </span>gcells <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">sst =</span> raster<span class="op">::</span><span class="kw">extract</span>(ghrsst, cell_)) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">group_by</span>(object_) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">summarize_at</span>(<span class="kw">vars</span>(sst), <span class="kw">funs</span>(<span class="kw">mean</span>(., <span class="dt">na.rm =</span> <span class="ot">TRUE</span>), <span class="kw">sd</span>(., <span class="dt">na.rm =</span> <span class="ot">TRUE</span>), length))
-
-<span class="kw">library</span>(spdplyr)
-sst_regions &lt;-<span class="st"> </span>sst_regions <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">inner_join</span>(result, <span class="kw">c</span>(<span class="st">&quot;ghrsst&quot;</span> =<span class="st"> &quot;object_&quot;</span>))
-
-<span class="kw">plot</span>(ghrsst, <span class="dt">col =</span> <span class="kw">bpy.colors</span>(<span class="dv">30</span>), <span class="dt">addfun =</span> <span class="cf">function</span>() <span class="kw">plot</span>(sst_regions, <span class="dt">add =</span> <span class="ot">TRUE</span>), 
-     <span class="dt">main =</span> <span class="st">&quot;SST data with simple regional polygon layer&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="kw">library</span>(tabularaster)</a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"><span class="kw">data</span>(<span class="st">&quot;ghrsst&quot;</span>)  ## a RasterLayer</a>
+<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="kw">data</span>(<span class="st">&quot;sst_regions&quot;</span>) ## a polygon layer, contiguous with ghrsst</a>
+<a class="sourceLine" id="cb35-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb35-5" data-line-number="5">gcells &lt;-<span class="st"> </span><span class="kw">cellnumbers</span>(ghrsst, sst_regions) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">object_ =</span> <span class="kw">as.integer</span>(object_))</a></code></pre></div>
+<pre><code>## Warning in cellnumbers.default(ghrsst, sst_regions): cellnumbers is very
+## slow for SpatialPolygons, consider conversion with 'sf::st_as_sf'</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" data-line-number="1">result &lt;-<span class="st"> </span>gcells <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">sst =</span> raster<span class="op">::</span><span class="kw">extract</span>(ghrsst, cell_)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(object_) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="st">  </span><span class="kw">summarize_at</span>(<span class="kw">vars</span>(sst), <span class="kw">funs</span>(<span class="kw">mean</span>(., <span class="dt">na.rm =</span> <span class="ot">TRUE</span>), <span class="kw">sd</span>(., <span class="dt">na.rm =</span> <span class="ot">TRUE</span>), length))</a>
+<a class="sourceLine" id="cb37-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb37-5" data-line-number="5"><span class="kw">library</span>(spdplyr)</a>
+<a class="sourceLine" id="cb37-6" data-line-number="6">sst_regions &lt;-<span class="st"> </span>sst_regions <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">inner_join</span>(result, <span class="kw">c</span>(<span class="st">&quot;ghrsst&quot;</span> =<span class="st"> &quot;object_&quot;</span>))</a>
+<a class="sourceLine" id="cb37-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb37-8" data-line-number="8"><span class="kw">plot</span>(ghrsst, <span class="dt">col =</span> <span class="kw">bpy.colors</span>(<span class="dv">30</span>), <span class="dt">addfun =</span> <span class="cf">function</span>() <span class="kw">plot</span>(sst_regions, <span class="dt">add =</span> <span class="ot">TRUE</span>), </a>
+<a class="sourceLine" id="cb37-9" data-line-number="9">     <span class="dt">main =</span> <span class="st">&quot;SST data with simple regional polygon layer&quot;</span>)</a></code></pre></div>
 <p><img src="data:image/png;base64,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KyvLysocDkc4HE7eJBwOa5qW5bn9Qnw+369fv1IOMxTWFIpeab2DDQ8PT0xMHDt2TJ8xMTFx7949XdefPXumlHK73cFgMHmTd+/erVmzpqKiIk9DnovX6129enXi8wxTYU2h6JVWYHV1dQN/W7Zs2fbt2wcGBswDtfv27fv8+fPLly/N9b98+eL3+/fv35/XUacXCoUCgcDhw4dT/iEsoCmUhLweJBARj8fNI7Dm/043b970+XyBQCDtyinHwaampurr66urqz0ez/379xsaGlauXDkyMpKjoc9YyBTOnTunlHr//n3KthaZAkxFGFja+6Du3r077copgRmGMTY2dvDgwaqqKrvd3tzcnM0d7jI27xTi8bjL5dq0aVPaza0wBZi4qhQgqLT2wYAcIzBAEIEBgggMEERggCACAwQRGCCIwABBBAYIIjBAEIEBgggMEERggCACAwQRGCCIwABBBAYIIjBAEIEBgggMEERggCACAwQRGCCIwABBBAYIIjBAEIEBgggMEERggCACAwQRGCCIwABBBAYIIjBAEIEBgggMEERggCACAwQRGCCIwABBBAYIIjBAEIEBgggMEERggCACAwQRGCCIwABBBAYIIjBAEIEBgggMEERggCACAwQRGCCIwABBBAYIIjBAEIEBgggMEERggCACAwT9A+R8PWWG9DOoAAAAAElFTkSuQmCC" /><!-- --></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#library(sf)</span>
-<span class="kw">plot</span>(sst_regions)</code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="co">#library(sf)</span></a>
+<a class="sourceLine" id="cb38-2" data-line-number="2"><span class="kw">plot</span>(sst_regions)</a></code></pre></div>
 <p><img src="data:image/png;base64,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" /><!-- --></p>
 </div>
 <div id="extract-cells-from-rasters" class="section level1">
 <h1>Extract cells from rasters</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tabularaster)
-<span class="kw">library</span>(raster)
-<span class="kw">library</span>(dplyr)
-<span class="kw">data</span>(<span class="st">&quot;rastercano&quot;</span>)
-<span class="kw">data</span>(<span class="st">&quot;polycano&quot;</span>)
-cells &lt;-<span class="st"> </span><span class="kw">cellnumbers</span>(rastercano, polycano[<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>, ])</code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">library</span>(tabularaster)</a>
+<a class="sourceLine" id="cb39-2" data-line-number="2"><span class="kw">library</span>(raster)</a>
+<a class="sourceLine" id="cb39-3" data-line-number="3"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb39-4" data-line-number="4"><span class="kw">data</span>(<span class="st">&quot;rastercano&quot;</span>)</a>
+<a class="sourceLine" id="cb39-5" data-line-number="5"><span class="kw">data</span>(<span class="st">&quot;polycano&quot;</span>)</a>
+<a class="sourceLine" id="cb39-6" data-line-number="6">cells &lt;-<span class="st"> </span><span class="kw">cellnumbers</span>(rastercano, polycano[<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>, ])</a></code></pre></div>
 <pre><code>## Warning: projections not the same 
 ##     x: NA
 ## query: NA</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cellnumbers</span>(rastercano, <span class="kw">as</span>(polycano[<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>, ], <span class="st">&quot;SpatialLinesDataFrame&quot;</span>))</code></pre></div>
-<pre><code>## Warning: projections not the same 
-##     x: NA
-## query: NA</code></pre>
-<pre><code>## # A tibble: 235 x 2
+<pre><code>## Warning in cellnumbers.default(rastercano, polycano[4:5, ]): cellnumbers is
+## very slow for SpatialPolygons, consider conversion with 'sf::st_as_sf'</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="kw">cellnumbers</span>(rastercano, <span class="kw">as</span>(polycano[<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>, ], <span class="st">&quot;SpatialLinesDataFrame&quot;</span>))</a></code></pre></div>
+<pre><code>## # A tibble: 305 x 2
 ##    object_ cell_
-##      &lt;int&gt; &lt;dbl&gt;
+##      &lt;int&gt; &lt;int&gt;
 ##  1       1  1129
 ##  2       1  1190
 ##  3       1  1251
-##  4       2     1
-##  5       2     2
-##  6       2     3
-##  7       2     4
-##  8       2     5
-##  9       2     6
-## 10       2     7
-## # ... with 225 more rows</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cellnumbers</span>(rastercano, <span class="kw">as</span>(<span class="kw">as</span>(polycano[<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>, ], <span class="st">&quot;SpatialLinesDataFrame&quot;</span>), <span class="st">&quot;SpatialPointsDataFrame&quot;</span>))</code></pre></div>
+##  4       2   854
+##  5       2   915
+##  6       2   976
+##  7       2  1037
+##  8       2  1098
+##  9       3     1
+## 10       3     2
+## # ... with 295 more rows</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="kw">cellnumbers</span>(rastercano, <span class="kw">as</span>(<span class="kw">as</span>(polycano[<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>, ], <span class="st">&quot;SpatialLinesDataFrame&quot;</span>), <span class="st">&quot;SpatialPointsDataFrame&quot;</span>))</a></code></pre></div>
 <pre><code>## Warning: projections not the same 
 ##     x: NA
 ## query: NA</code></pre>
@@ -368,86 +576,86 @@ cells &lt;-<span class="st"> </span><span class="kw">cellnumbers</span>(rasterca
 ## 10       1  1037
 ## # ... with 321 more rows</code></pre>
 <p>In the case of polygons, there’s an argument <code>weights</code> that can be used to get an approximate weighting for partial cell coverage.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">poly &lt;-<span class="st"> </span>sf<span class="op">::</span><span class="kw">st_sf</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">geometry =</span> sf<span class="op">::</span><span class="kw">st_sfc</span>(sf<span class="op">::</span><span class="kw">st_polygon</span>(<span class="kw">list</span>(
-  <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="fl">0.57</span>, <span class="fl">0.55</span>, <span class="fl">0.19</span>, <span class="fl">0.43</span>, <span class="fl">0.82</span>, <span class="fl">0.57</span>), 
-        <span class="kw">c</span>(<span class="fl">0.22</span>, <span class="fl">0.24</span>, <span class="fl">0.46</span>, <span class="fl">0.77</span>, <span class="fl">0.56</span>, <span class="fl">0.22</span>))))))
-
-
-
-
-xweight &lt;-<span class="st"> </span><span class="kw">cellnumbers</span>(rastercano, poly, <span class="dt">weights =</span> <span class="ot">TRUE</span>)
-
-dgrid &lt;-<span class="st"> </span><span class="kw">setValues</span>(rastercano, <span class="ot">NA_real_</span>)
-dgrid[xweight<span class="op">$</span>cell_] &lt;-<span class="st"> </span>xweight<span class="op">$</span>weight_
-<span class="kw">plot</span>(dgrid, <span class="dt">main =</span> <span class="st">&quot;cell weights based on partial overlap&quot;</span>, <span class="dt">col =</span> viridis<span class="op">::</span><span class="kw">viridis</span>(<span class="dv">9</span>), 
-     <span class="dt">addfun =</span> <span class="cf">function</span>() <span class="kw">polygon</span>(poly<span class="op">$</span>geometry[[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)]]))</code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" data-line-number="1">poly &lt;-<span class="st"> </span>sf<span class="op">::</span><span class="kw">st_sf</span>(<span class="dt">a =</span> <span class="dv">1</span>, <span class="dt">geometry =</span> sf<span class="op">::</span><span class="kw">st_sfc</span>(sf<span class="op">::</span><span class="kw">st_polygon</span>(<span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb47-2" data-line-number="2">  <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="fl">0.57</span>, <span class="fl">0.55</span>, <span class="fl">0.19</span>, <span class="fl">0.43</span>, <span class="fl">0.82</span>, <span class="fl">0.57</span>), </a>
+<a class="sourceLine" id="cb47-3" data-line-number="3">        <span class="kw">c</span>(<span class="fl">0.22</span>, <span class="fl">0.24</span>, <span class="fl">0.46</span>, <span class="fl">0.77</span>, <span class="fl">0.56</span>, <span class="fl">0.22</span>))))))</a>
+<a class="sourceLine" id="cb47-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb47-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb47-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb47-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb47-8" data-line-number="8">xweight &lt;-<span class="st"> </span><span class="kw">cellnumbers</span>(rastercano, poly, <span class="dt">weights =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb47-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb47-10" data-line-number="10">dgrid &lt;-<span class="st"> </span><span class="kw">setValues</span>(rastercano, <span class="ot">NA_real_</span>)</a>
+<a class="sourceLine" id="cb47-11" data-line-number="11">dgrid[xweight<span class="op">$</span>cell_] &lt;-<span class="st"> </span>xweight<span class="op">$</span>weight_</a>
+<a class="sourceLine" id="cb47-12" data-line-number="12"><span class="kw">plot</span>(dgrid, <span class="dt">main =</span> <span class="st">&quot;cell weights based on partial overlap&quot;</span>, <span class="dt">col =</span> viridis<span class="op">::</span><span class="kw">viridis</span>(<span class="dv">9</span>), </a>
+<a class="sourceLine" id="cb47-13" data-line-number="13">     <span class="dt">addfun =</span> <span class="cf">function</span>() <span class="kw">polygon</span>(poly<span class="op">$</span>geometry[[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)]]))</a></code></pre></div>
 </div>
 <div id="extract-values-or-cell-numbers-with-sf-object" class="section level1">
 <h1>Extract values or cell numbers with sf object</h1>
 <p>It’s an unfortunate symptom of fragmentation in the R spatial tools that two of the best and most highly used packages <code>raster</code> and <code>sf</code> have no formal way to be used together.</p>
 <p>Here we use the <code>extent</code> capability of <code>spex</code>, and the tabularaster tools <code>extract</code> and <code>cellnumbers</code> to build a raster from an <code>sf</code> layer.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(sf)
-
-poly &lt;-<span class="st"> </span><span class="kw">read_sf</span>(<span class="kw">system.file</span>(<span class="st">&quot;shape/nc.shp&quot;</span>, <span class="dt">package=</span><span class="st">&quot;sf&quot;</span>))
-<span class="kw">library</span>(spex)
-<span class="kw">extent</span>(poly)
-<span class="kw">spex</span>(poly)
-## we can't do this
-<span class="kw">try</span>(grid &lt;-<span class="st">  </span><span class="kw">raster</span>(poly))
-
-## but we can do 
-
-(grid &lt;-<span class="st"> </span><span class="kw">raster</span>(<span class="kw">spex</span>(poly), <span class="dt">nrow =</span> <span class="dv">100</span>, <span class="dt">ncol =</span> <span class="dv">140</span>))
-
-## index the raster with the sf layer
-(cn &lt;-<span class="st"> </span><span class="kw">cellnumbers</span>(grid, poly))
-
-grid[cn<span class="op">$</span>cell_] &lt;-<span class="st"> </span>cn<span class="op">$</span>object_
-
-## we slasterized it (slow rasterize)
-<span class="kw">plot</span>(grid)</code></pre></div>
-<p>That’s nice, since we can actually use extract with the cell numbers, rather than the sf object. This is preferable for repeated use of the extraction, e.g. for time series extraction where we need to visit each time step iteratively. (Raster is already index-optimized for multi-layers raster objects).</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="kw">library</span>(sf)</a>
+<a class="sourceLine" id="cb48-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb48-3" data-line-number="3">poly &lt;-<span class="st"> </span><span class="kw">read_sf</span>(<span class="kw">system.file</span>(<span class="st">&quot;shape/nc.shp&quot;</span>, <span class="dt">package=</span><span class="st">&quot;sf&quot;</span>))</a>
+<a class="sourceLine" id="cb48-4" data-line-number="4"><span class="kw">library</span>(spex)</a>
+<a class="sourceLine" id="cb48-5" data-line-number="5"><span class="kw">extent</span>(poly)</a>
+<a class="sourceLine" id="cb48-6" data-line-number="6"><span class="kw">spex</span>(poly)</a>
+<a class="sourceLine" id="cb48-7" data-line-number="7">## we can't do this</a>
+<a class="sourceLine" id="cb48-8" data-line-number="8"><span class="kw">try</span>(grid &lt;-<span class="st">  </span><span class="kw">raster</span>(poly))</a>
+<a class="sourceLine" id="cb48-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb48-10" data-line-number="10">## but we can do </a>
+<a class="sourceLine" id="cb48-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb48-12" data-line-number="12">(grid &lt;-<span class="st"> </span><span class="kw">raster</span>(<span class="kw">spex</span>(poly), <span class="dt">nrow =</span> <span class="dv">100</span>, <span class="dt">ncol =</span> <span class="dv">140</span>))</a>
+<a class="sourceLine" id="cb48-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb48-14" data-line-number="14">## index the raster with the sf layer</a>
+<a class="sourceLine" id="cb48-15" data-line-number="15">(cn &lt;-<span class="st"> </span><span class="kw">cellnumbers</span>(grid, poly))</a>
+<a class="sourceLine" id="cb48-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb48-17" data-line-number="17">grid[cn<span class="op">$</span>cell_] &lt;-<span class="st"> </span>cn<span class="op">$</span>object_</a>
+<a class="sourceLine" id="cb48-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb48-19" data-line-number="19">## we slasterized it (slow rasterize)</a>
+<a class="sourceLine" id="cb48-20" data-line-number="20"><span class="kw">plot</span>(grid)</a></code></pre></div>
+<p>That’s nice, since we can actually use extract with the cell numbers, rather than the sf object. This is preferable for repeated use of the extraction, e.g. for time series extraction where we need to visit each time step iteratively. (Raster is already index-optimized for multi-layers raster objects).</p>
 <p>Now use <code>fasterize</code> to generate the grid, and use cellnumbers to extract.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## fasterize it
-<span class="kw">library</span>(fasterize)
-<span class="co">#poly$object_ &lt;- as.integer(seq_len(nrow(poly)))</span>
-fgrid &lt;-<span class="st"> </span><span class="kw">fasterize</span>(poly, grid, <span class="dt">field =</span> <span class="st">&quot;AREA&quot;</span>)
-scl &lt;-<span class="st"> </span><span class="cf">function</span>(x) {rg &lt;-<span class="st"> </span><span class="kw">range</span>(x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>); (x   <span class="op">-</span><span class="st"> </span>rg[<span class="dv">1</span>])<span class="op">/</span><span class="kw">diff</span>(rg)}
-<span class="kw">plot</span>(<span class="kw">xyFromCell</span>(grid, cn<span class="op">$</span>cell_), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> <span class="fl">0.4</span>, <span class="dt">col =</span> <span class="kw">bpy.colors</span>(<span class="dv">26</span>)[<span class="kw">scl</span>(raster<span class="op">::</span><span class="kw">extract</span>(fgrid, cn<span class="op">$</span>cell_)) <span class="op">*</span><span class="st"> </span><span class="dv">25</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span>])</code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" data-line-number="1">## fasterize it</a>
+<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="kw">library</span>(fasterize)</a>
+<a class="sourceLine" id="cb49-3" data-line-number="3"><span class="co">#poly$object_ &lt;- as.integer(seq_len(nrow(poly)))</span></a>
+<a class="sourceLine" id="cb49-4" data-line-number="4">fgrid &lt;-<span class="st"> </span><span class="kw">fasterize</span>(poly, grid, <span class="dt">field =</span> <span class="st">&quot;AREA&quot;</span>)</a>
+<a class="sourceLine" id="cb49-5" data-line-number="5">scl &lt;-<span class="st"> </span><span class="cf">function</span>(x) {rg &lt;-<span class="st"> </span><span class="kw">range</span>(x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>); (x   <span class="op">-</span><span class="st"> </span>rg[<span class="dv">1</span>])<span class="op">/</span><span class="kw">diff</span>(rg)}</a>
+<a class="sourceLine" id="cb49-6" data-line-number="6"><span class="kw">plot</span>(<span class="kw">xyFromCell</span>(grid, cn<span class="op">$</span>cell_), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">cex =</span> <span class="fl">0.4</span>, <span class="dt">col =</span> <span class="kw">bpy.colors</span>(<span class="dv">26</span>)[<span class="kw">scl</span>(raster<span class="op">::</span><span class="kw">extract</span>(fgrid, cn<span class="op">$</span>cell_)) <span class="op">*</span><span class="st"> </span><span class="dv">25</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span>])</a></code></pre></div>
 <p>Use velox instead</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(spex)
-<span class="kw">library</span>(raster)
-<span class="kw">library</span>(tabularaster)
-## but we can do 
-(grid &lt;-<span class="st"> </span><span class="kw">raster</span>(<span class="kw">spex</span>(sst_regions), <span class="dt">res =</span> <span class="fl">0.2</span>))
-<span class="kw">system.time</span>({
-<span class="kw">library</span>(velox)
-vx &lt;-<span class="st"> </span><span class="kw">velox</span>(<span class="kw">setValues</span>(grid, <span class="dv">0</span>))
-vx<span class="op">$</span><span class="kw">rasterize</span>(sf<span class="op">::</span><span class="kw">st_as_sf</span>(sst_regions), <span class="dt">field =</span> <span class="st">&quot;ghrsst&quot;</span>)
-
-<span class="kw">library</span>(dplyr)
-res1 &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(vx<span class="op">$</span><span class="kw">as.RasterLayer</span>()) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="co">#rename(object_ = cellvalue) %&gt;% </span>
-<span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(cellvalue))
-})
-
-
-<span class="kw">system.time</span>({
-  res2 &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(<span class="kw">rasterize</span>(sst_regions, grid, <span class="dt">field =</span> sst_regions<span class="op">$</span>ghrsst))
-})
-
-vcellnumbers &lt;-<span class="st"> </span><span class="cf">function</span>(x, query, ...) {
-  query<span class="op">$</span>object_ &lt;-<span class="st"> </span><span class="kw">seq_len</span>(<span class="kw">nrow</span>(query))
-  query &lt;-<span class="st"> </span>sf<span class="op">::</span><span class="kw">st_as_sf</span>(query)
-  x &lt;-<span class="st"> </span><span class="kw">setValues</span>(x[[<span class="dv">1</span>]], <span class="dv">1</span>)
-  vx &lt;-<span class="st"> </span><span class="kw">velox</span>(x)
-  vx<span class="op">$</span><span class="kw">rasterize</span>(query, <span class="dt">field =</span> <span class="st">&quot;object_&quot;</span>)
-  vx<span class="op">$</span><span class="kw">as.RasterLayer</span>() <span class="op">%&gt;%</span><span class="st">   </span>
-<span class="st">    </span><span class="kw">as_tibble</span>(<span class="dt">na.rm =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">object_ =</span> cellvalue, <span class="dt">cell_ =</span> cellindex)
-}
-<span class="kw">vcellnumbers</span>(grid, sst_regions)
-<span class="kw">cellnumbers</span>(grid, sst_regions)</code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="kw">library</span>(spex)</a>
+<a class="sourceLine" id="cb50-2" data-line-number="2"><span class="kw">library</span>(raster)</a>
+<a class="sourceLine" id="cb50-3" data-line-number="3"><span class="kw">library</span>(tabularaster)</a>
+<a class="sourceLine" id="cb50-4" data-line-number="4">## but we can do </a>
+<a class="sourceLine" id="cb50-5" data-line-number="5">(grid &lt;-<span class="st"> </span><span class="kw">raster</span>(<span class="kw">spex</span>(sst_regions), <span class="dt">res =</span> <span class="fl">0.2</span>))</a>
+<a class="sourceLine" id="cb50-6" data-line-number="6"><span class="kw">system.time</span>({</a>
+<a class="sourceLine" id="cb50-7" data-line-number="7"><span class="kw">library</span>(velox)</a>
+<a class="sourceLine" id="cb50-8" data-line-number="8">vx &lt;-<span class="st"> </span><span class="kw">velox</span>(<span class="kw">setValues</span>(grid, <span class="dv">0</span>))</a>
+<a class="sourceLine" id="cb50-9" data-line-number="9">vx<span class="op">$</span><span class="kw">rasterize</span>(sf<span class="op">::</span><span class="kw">st_as_sf</span>(sst_regions), <span class="dt">field =</span> <span class="st">&quot;ghrsst&quot;</span>)</a>
+<a class="sourceLine" id="cb50-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb50-11" data-line-number="11"><span class="kw">library</span>(dplyr)</a>
+<a class="sourceLine" id="cb50-12" data-line-number="12">res1 &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(vx<span class="op">$</span><span class="kw">as.RasterLayer</span>()) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb50-13" data-line-number="13"><span class="st">  </span><span class="co">#rename(object_ = cellvalue) %&gt;% </span></a>
+<a class="sourceLine" id="cb50-14" data-line-number="14"><span class="st">  </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(cellvalue))</a>
+<a class="sourceLine" id="cb50-15" data-line-number="15">})</a>
+<a class="sourceLine" id="cb50-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb50-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb50-18" data-line-number="18"><span class="kw">system.time</span>({</a>
+<a class="sourceLine" id="cb50-19" data-line-number="19">  res2 &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(<span class="kw">rasterize</span>(sst_regions, grid, <span class="dt">field =</span> sst_regions<span class="op">$</span>ghrsst))</a>
+<a class="sourceLine" id="cb50-20" data-line-number="20">})</a>
+<a class="sourceLine" id="cb50-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb50-22" data-line-number="22">vcellnumbers &lt;-<span class="st"> </span><span class="cf">function</span>(x, query, ...) {</a>
+<a class="sourceLine" id="cb50-23" data-line-number="23">  query<span class="op">$</span>object_ &lt;-<span class="st"> </span><span class="kw">seq_len</span>(<span class="kw">nrow</span>(query))</a>
+<a class="sourceLine" id="cb50-24" data-line-number="24">  query &lt;-<span class="st"> </span>sf<span class="op">::</span><span class="kw">st_as_sf</span>(query)</a>
+<a class="sourceLine" id="cb50-25" data-line-number="25">  x &lt;-<span class="st"> </span><span class="kw">setValues</span>(x[[<span class="dv">1</span>]], <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb50-26" data-line-number="26">  vx &lt;-<span class="st"> </span><span class="kw">velox</span>(x)</a>
+<a class="sourceLine" id="cb50-27" data-line-number="27">  vx<span class="op">$</span><span class="kw">rasterize</span>(query, <span class="dt">field =</span> <span class="st">&quot;object_&quot;</span>)</a>
+<a class="sourceLine" id="cb50-28" data-line-number="28">  vx<span class="op">$</span><span class="kw">as.RasterLayer</span>() <span class="op">%&gt;%</span><span class="st">   </span></a>
+<a class="sourceLine" id="cb50-29" data-line-number="29"><span class="st">    </span><span class="kw">as_tibble</span>(<span class="dt">na.rm =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb50-30" data-line-number="30"><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">object_ =</span> cellvalue, <span class="dt">cell_ =</span> cellindex)</a>
+<a class="sourceLine" id="cb50-31" data-line-number="31">}</a>
+<a class="sourceLine" id="cb50-32" data-line-number="32"><span class="kw">vcellnumbers</span>(grid, sst_regions)</a>
+<a class="sourceLine" id="cb50-33" data-line-number="33"><span class="kw">cellnumbers</span>(grid, sst_regions)</a></code></pre></div>
 </div>
 
 

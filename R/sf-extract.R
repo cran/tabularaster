@@ -3,12 +3,16 @@ extent.sf <- function(x, ...) {
   raster::extent(attr(x[[attr(x, "sf_column")]], "bbox")[c(1, 3, 2, 4)])
 }
 
-#' @importFrom methods setMethod
-setMethod(f = "extent", signature = "sf", definition = extent.sf)
+# #' @importFrom methods setMethod
+# #' @importFrom raster extent
+# #' @export extent
+# #' @importMethodsFrom raster extent
+# #' @exportMethod extent sf
+# setMethod(f = "extent", signature = "sf", definition = extent.sf)
 
-
+#' @importFrom raster extent
 spex.sf <- function(x, crs, ...) {
-  spex(extent(x), attr(x[[attr(x, "sf_column")]], "crs")$proj4string)
+  spex(raster::extent(x), attr(x[[attr(x, "sf_column")]], "crs")$proj4string)
 }
 
 

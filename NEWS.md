@@ -1,4 +1,16 @@
-# 0.4.0
+# tabularaster dev
+
+* Function `cellnumbers` now provides only basic cell lookup, the weights and other
+ options available in raster functions are ignored. 
+ 
+* Function `extentFromCells` is now imported from raster and re-exported. 
+
+* Now applying `fasterize` for sf polygon objects, and `spatstat` for sf line objects for 
+ very significant speed ups. 
+
+* Now import `spatstat` for faster line rasterization. 
+
+# tabularaster 0.4.0
 
 * add `xy` argument to `as_tibble`
 
