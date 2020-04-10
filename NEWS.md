@@ -1,4 +1,16 @@
-# tabularaster dev
+# tabularaster 0.6.0
+
+* Removed unnecessary issues with crs metadata strings. 
+
+* Now using silicate for the line-to-segments ops, removed spbabel imports. 
+
+* Remove old `bufext()` and outdated spex import. 
+
+* Un-deprecate and re-export `decimate()`. 
+
+* Drop `extentFromCells()` export. 
+
+# tabularaster 0.5.0
 
 * Function `cellnumbers` now provides only basic cell lookup, the weights and other
  options available in raster functions are ignored. 

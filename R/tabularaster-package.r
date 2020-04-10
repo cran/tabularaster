@@ -1,27 +1,19 @@
-#' Tabular tools for raster, tidy tools for raster.
+#' Tabular tools for raster
+#' 
+#' Extract and index with raster tidy tools for raster.
+#' 
 #' 
 #' @name tabularaster
 #' @docType package
 #' @details Tabularaster includes these main functions.  
 #' \tabular{ll}{
-#'  \code{\link{as_tibble}}
 #'  \code{\link{as_tibble}} \tab convert raster data to data frame form, with control over output and form of dimension/coordinate columns \cr
 #'  \code{\link{cellnumbers}} \tab extract a data frame of query identifiers and cell,pixel index numbers \cr
-#'  \code{\link{extentFromCells}} \tab (now incorporated into raster itself) \cr
+#'  \code{\link{decimate}} \tab fast and loose resizing of a raster to coarser resolution \cr
 #'  \code{\link{index_extent}} \tab build an extent in row column form, as opposed to coordinate value form \cr
 #'  }
 NULL
 
-#' Re-exports from raster
-#' 
-#' These functions are imported and then re-exported.
-#' 
-#' See \code{raster::\link[raster]{extentFromCells}} for details.
-#' @name raster-exports 
-#' @aliases extentFromCells 
-#' @importFrom raster extentFromCells
-#' @export extentFromCells
-NULL
 
 #' Sea surface temperature data. 
 #' 
@@ -31,10 +23,9 @@ NULL
 #' details. 
 #' 
 #' `sst_regions` is a simple polygon region layer to sit over the SST data.
-#' @importFrom viridis viridis
 #' @examples 
 #' library(raster)
-#' plot(ghrsst, col = viridis::viridis(100))
+#' plot(ghrsst, col = hcl.colors(12, "YlOrRd", rev = TRUE))
 #' plot(sst_regions, add = TRUE, col = NA)
 #' ## cellnumbers(ghrsst, sst_regions) 
 #' @format A raster created GHRSST data and raster smoothing.

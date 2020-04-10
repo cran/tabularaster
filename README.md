@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![Travis-CI Build
 Status](https://travis-ci.org/hypertidy/tabularaster.svg?branch=master)](https://travis-ci.org/hypertidy/tabularaster)
 [![AppVeyor build
@@ -82,7 +84,15 @@ cells %>% mutate(value= extract(raster, cell_)) %>% group_by(cell_) %>% summariz
 ```
 
 The utility of this is very much dependent on individual workflow, so
-this in its own right is not very exciting. `Tabularaster` simply
-provides an easier way to create your tools.
+this in its own right is not very exciting: Tabularaster simply provides
+an easier way to create news tools when format vagaries aren’t your day
+job.
 
 See the vignettes for more.
+
+-----
+
+Please note that the ‘silicate’ project is released with a [Contributor
+Code of
+Conduct](https://github.com/hypertidy/tabularaster/blob/master/CODE_OF_CONDUCT.md).
+By contributing to this project, you agree to abide by its terms.

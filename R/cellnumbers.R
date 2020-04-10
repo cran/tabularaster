@@ -1,13 +1,3 @@
-fast_extract <- function(x, y, ...) {
-  ## BEWARE no extract options are respected
-  raster::extract(x, sfpoly_cells(x, y))
-}
-
-sfpoly_cells <- function(rast, sfpoly) {
-  ## BEWARE, could be a big-data, this is not
-  ## sparsely specified, so it's wasteful on memory, but fast (if you have the mem)
-  which(!is.na(fasterize::fasterize(sfpoly, rast)[]))
-}
 
 #' Extract cell numbers from a Raster object.
 #'
@@ -55,14 +45,16 @@ cellnumbers <- function(x, query, ...) {
 #' @name cellnumbers
 #' @export
 cellnumbers.default <- function(x, query, ...) {
+  a <- NULL ## allow a basic check for not understanding "query"
   if (inherits(query, "sf")) {
     ## we need this for points, mpoints
-    tab <- as.data.frame(query)
-    if (attr(query, "sf_column") %in% names(tab)) tab[[attr(query, "sf_column")]] <- NULL
-    map <- spbabel::sptable(query)
-    crs <- attr(query[[attr(query, "sf_column")]], "crs")$proj4string
-    query <- spbabel::sp(map, tab, crs)
-  }
+    pth <- silicate::sc_path(query)
+ 
+    tab <- tibble(object_ = rep(as.integer(factor(pth$object_)), pth$ncoords_), 
+                  cell_ = raster::cellFromXY(x, as.matrix(silicate::sc_coord(query)[c("x_" , "y_")])))
+    return(tab)
+                  
+ }
   if (is.na(projection(x)) || is.na(projection(query)) || projection(x) != projection(query)) {
     warning(sprintf("projections not the same \n    x: %s\nquery: %s", projection(x), projection(query)), call. = FALSE)
   }
@@ -71,11 +63,13 @@ cellnumbers.default <- function(x, query, ...) {
     a <- cellFromPolygon(x, query)
   }
   if (is.matrix(query) | inherits(query, "SpatialPoints")) {
+    if (is.matrix(query)) stopifnot(ncol(query) >= 2)
     a <- list(cellFromXY(x, query))
   }
   if (inherits(query, "SpatialMultiPoints")) {
     a <- lapply(query@coords, function(xymat) cellFromXY(x, xymat))
   }
+  if (is.null(a)) stop(sprintf("no method for 'query' of type %s", class(query)[1L]))
   d <- dplyr::bind_rows(lapply(a, mat2d_f), .id = "object_")
   d[["object_"]] <- as.integer(d[["object_"]])
   if (ncol(d) == 2L) names(d) <- c("object_", "cell_")
@@ -91,8 +85,12 @@ cellnumbers.SpatialLines <- function(x, query, ...) {
 #' @name cellnumbers
 #' @export
 cellnumbers.sfc <- function(x,  query, ...) {
-  sf1 <- data.frame(geometry = query)
-  cellnumbers(structure(sf1, sf_column = "geometry", agr = NULL, class = c("sf", "data.frame")))
+  if (!"list" %in% class(query)) {
+    class(query) <- c(class(query), "list")
+  }
+
+   sf1 <- tibble::tibble(geometry = query)
+   cellnumbers(x, structure(sf1, sf_column = "geometry", agr = NULL, class = c("sf", "data.frame")))
 }
 #' @name cellnumbers
 #' @export
@@ -110,22 +108,13 @@ cellnumbers.sf <- function(x, query, ...) {
     ok <- !is.na(v)
     return(tibble::tibble(object_ = v[ok], cell_ = which(ok)))
   }
+
   cellnumbers.default(x, query)  ## needed for points to pass through
   #   stop(sprintf("%x not supported", class(x)))
 }
 
 
-psp_i <- function(x, i = 1) {
-  g <- rep(seq_len(nrow(x$geometry)), x$geometry$nrow)
-  coord <- x$coord
-  idx <- which(g == i) 
-  segment <- x$segment[x$segment$.vx0 %in% idx & x$segment$.vx1 %in% idx, ]
-  spatstat::psp(x0 = coord$x_[segment$.vx0],
-                y0 = coord$y_[segment$.vx0],  
-                x1 = coord$x_[segment$.vx1], 
-                y1 = coord$y_[segment$.vx1], 
-                window = spatstat::owin(range(coord$x_), range(coord$y_)))
-}
+
 #' @importFrom spatstat owin as.owin
 as.owin.BasicRaster <- function(W, ...) {
   msk <- matrix(TRUE, nrow(W), ncol(W))
@@ -135,14 +124,18 @@ pix <- function(psp, ras) {
   spatstat::pixellate(psp, as.owin(ras), weights = 1)   
 }
 
-
-line_cellnumbers <- function(ln, r) {
-  x <- vertex_edge_path(ln)
-  im <- setValues(r, 0)
-  l <- vector("list", nrow(x$geometry))
+line_cellnumbers <- function(x, r) {
+  sc <- silicate::SC0(x)
+  xy <- as.matrix(silicate::sc_vertex(sc)[c("x_", "y_")])
+  l <- vector("list", nrow(silicate::sc_object(sc)))
+  ow <- spatstat::owin(range(xy[,1]), range(xy[,2]))
   for (i in seq_along(l)) {
-    im <- (raster(pix(psp_i(x, i = i), r)) > 0)
-    l[[i]] <- tibble(object_ = i, cell_ =   which(values(im) > 0))    
+    segs <- as.matrix(do.call(rbind, sc$object$topology_[i])[c(".vx0", ".vx1")])
+    pspii <- spatstat::psp(xy[segs[,1L],1L], xy[segs[,1L],2L], 
+                           xy[segs[,2L],1L], xy[segs[,2L],2L], window = ow)
+    
+      im <- (raster(pix(pspii, r)) > 0)
+    l[[i]] <- tibble(object_ = i, cell_ =   which(raster::values(im) > 0))    
   }
   dplyr::bind_rows(l)
-}
+} 

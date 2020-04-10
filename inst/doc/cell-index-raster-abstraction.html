@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <meta name="author" content="Michael Sumner" />
 
-<meta name="date" content="2018-05-22" />
+<meta name="date" content="2020-04-10" />
 
 <title>The raster functions for cell abstraction</title>
 
@@ -31,9 +31,6 @@ padding-right: 2em;
 font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 font-size: 14px;
 line-height: 1.35;
-}
-#header {
-text-align: center;
 }
 #TOC {
 clear: both;
@@ -202,8 +199,12 @@ code > span.st { color: #d14; }
 code > span.co { color: #888888; font-style: italic; } 
 code > span.ot { color: #007020; } 
 code > span.al { color: #ff0000; font-weight: bold; } 
-code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
 </style>
+
+
+
 
 </head>
 
@@ -213,8 +214,8 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 
 <h1 class="title toc-ignore">The raster functions for cell abstraction</h1>
-<h4 class="author"><em>Michael Sumner</em></h4>
-<h4 class="date"><em>2018-05-22</em></h4>
+<h4 class="author">Michael Sumner</h4>
+<h4 class="date">2020-04-10</h4>
 
 
 
@@ -224,6 +225,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <li><code>[</code></li>
 <li><code>adjacent</code></li>
 <li><code>colFromCell</code></li>
+<li><code>extentFromCells</code></li>
 <li><code>rasterFromCells</code></li>
 <li><code>rowColFromCell</code><br />
 </li>
@@ -249,9 +251,12 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <p>Others</p>
 <ul>
 <li><code>setValues</code> will work as <code>fun(r, vals, index)</code> only for <code>RasterLayerSparse</code></li>
+<li><code>extent(Raster, r1, r2, c1, c2)</code> to crop an extent by row/column</li>
 </ul>
-<p>The sparse raster is a under-used feature and needs to be fleshed out.</p>
 
+
+
+<!-- code folding -->
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
