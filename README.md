@@ -1,17 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![Lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Travis-CI Build
-Status](https://travis-ci.org/hypertidy/tabularaster.svg?branch=master)](https://travis-ci.org/hypertidy/tabularaster)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/hypertidy/tabularaster?branch=master&svg=true)](https://ci.appveyor.com/project/mdsumner/tabularaster-sp94a)
-[![Coverage
-Status](https://img.shields.io/codecov/c/github/hypertidy/tabularaster/master.svg)](https://codecov.io/github/hypertidy/tabularaster?branch=master)
+<!-- badges: start -->
+
+[![Lifecycle\_stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![R\_build\_status](https://github.com/hypertidy/tabularaster/workflows/R-CMD-check/badge.svg)](https://github.com/hypertidy/tabularaster/actions?query=workflow%3AR-CMD-check)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/tabularaster)](https://cran.r-project.org/package=tabularaster)
-[![CRAN RStudio mirror
-downloads](http://cranlogs.r-pkg.org/badges/tabularaster)](http://www.r-pkg.org/pkg/tabularaster)
+[![CRAN\_RStudio\_mirror\_downloads](http://cranlogs.r-pkg.org/badges/tabularaster)](http://www.r-pkg.org/pkg/tabularaster)
+[![R\_build\_status](https://github.com/hypertidy/tabularaster/workflows/test-coverage/badge.svg)](https://github.com/hypertidy/tabularaster/actions)
+<!-- badges: end -->
 
 # tabularaster
 
@@ -36,8 +33,8 @@ Tabularaster provides these functions.
   - `index_extent` - create an index extent, essentially `extent(0,
     ncol(raster), 0, nrow(raster))`
 
-All functions that work with `sp Spatial` also work with \`sf simple
-features.
+All functions that work with `sp Spatial` also work with `sf simple
+features`.
 
 There is some overlap with `quadmesh` and `spex` while I figure out
 where things belong.
