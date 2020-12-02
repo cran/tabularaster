@@ -12,7 +12,7 @@ A data frame with 117843 rows and 2 variables:
 These are cell values on a grid that is 648x958.
 }
 \description{
-This is just a free image off the internetz.
+This is just a free image off the internet.
 The image was read in and all non-essential items dropped. The dimensions in \code{raster::raster} terms is stored in
 \code{attr(sharkcano, "rasterdim")}.
 }
@@ -22,12 +22,12 @@ rd <- attr(sharkcano, "rasterdim")
 rastershark <- raster(matrix(NA_integer_, rd[1], rd[2]))
 rastershark[sharkcano$cell_] <- sharkcano$byte  ## byte, heh
 ## I present to you, Sharkcano!  (Just wait for the 3D version, Quadshark).
-#plot(rastercano)
-#contour(rastershark, add = TRUE, labels = FALSE)
-#plot(rastershark, col = "black")
+plot(rastercano)
+contour(rastershark, add = TRUE, labels = FALSE)
+plot(rastershark, col = "black")
 ## another way
-#plot(rastercano)
-#points(xyFromCell(rastershark, sharkcano$cell_), pch = ".")
+plot(rastercano)
+points(xyFromCell(rastershark, sharkcano$cell_), pch = ".")
 }
 \references{
 This is the small version from here, see script in data-raw/sharkcano.r

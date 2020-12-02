@@ -26,7 +26,11 @@ cellnumbers(x, query, ...)
 \item{...}{unused}
 }
 \value{
-tbl_df data frame
+a data frame (tibble) with columns
+\itemize{
+\item \code{object_} - the object ID (what row is it from the spatial object)
+\item \code{cell_}   - the cell number of the raster
+}
 }
 \description{
 Provide the 'cellnumbers' capability of \link[raster:extract]{raster::extract} and friends
@@ -49,15 +53,14 @@ library(raster)
 library(dplyr)
 r <- raster(volcano) \%>\% aggregate(fact = 4)
 cellnumbers(r, rasterToContour(r, level = 120))
-#library(dplyr)
+library(dplyr)
 
-#cr <- cut(r,  pretty(values(r)))
-#p <- raster::rasterToPolygons(cr, dissolve = TRUE)
-#p <- spex::qm_rasterToPolygons_sp(cr)
-#tt <- cellnumbers(cr, p)
-#library(dplyr)
-#tt \%>\% mutate(v = extract(r, cell_)) \%>\% 
-#group_by(object_) \%>\% 
-#summarize(mean(v)) 
-#head(pretty(values(r)), -1)
+cr <- cut(r,  pretty(values(r)))
+
+suppressWarnings(tt <- cellnumbers(cr, polycano))
+library(dplyr)
+tt \%>\% mutate(v = extract(r, cell_)) \%>\% 
+group_by(object_) \%>\% 
+summarize(mean(v)) 
+head(pretty(values(r)), -1)
 }

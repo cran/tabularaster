@@ -9,3 +9,7 @@ A raster created from the \code{\link[datasets]{volcano}} data.
 \description{
 See data-raw/rastercano.r in the source repository.
 }
+\examples{
+library(raster)
+plot(rastercano)
+}

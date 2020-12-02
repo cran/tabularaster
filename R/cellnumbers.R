@@ -18,7 +18,11 @@
 #' @param x Raster object
 #' @param ... unused
 #' @param query Spatial object or matrix of coordinates
-#' @return tbl_df data frame
+#' @return a data frame (tibble) with columns
+#' 
+#' * `object_` - the object ID (what row is it from the spatial object)
+#' * `cell_`   - the cell number of the raster
+#' 
 #' @export
 #' @importFrom dplyr bind_rows
 #' @importFrom raster cellFromPolygon cellFromLine cellFromXY projection
@@ -27,17 +31,16 @@
 #' library(dplyr)
 #' r <- raster(volcano) %>% aggregate(fact = 4)
 #' cellnumbers(r, rasterToContour(r, level = 120))
-#' #library(dplyr)
+#' library(dplyr)
 #' 
-#' #cr <- cut(r,  pretty(values(r)))
-#' #p <- raster::rasterToPolygons(cr, dissolve = TRUE)
-#' #p <- spex::qm_rasterToPolygons_sp(cr)
-#' #tt <- cellnumbers(cr, p)
-#' #library(dplyr)
-#' #tt %>% mutate(v = extract(r, cell_)) %>% 
-#' #group_by(object_) %>% 
-#' #summarize(mean(v)) 
-#' #head(pretty(values(r)), -1)
+#' cr <- cut(r,  pretty(values(r)))
+#' 
+#' suppressWarnings(tt <- cellnumbers(cr, polycano))
+#' library(dplyr)
+#' tt %>% mutate(v = extract(r, cell_)) %>% 
+#' group_by(object_) %>% 
+#' summarize(mean(v)) 
+#' head(pretty(values(r)), -1)
 #' @export
 cellnumbers <- function(x, query, ...) {
   UseMethod("cellnumbers", object = query)
@@ -56,10 +59,10 @@ cellnumbers.default <- function(x, query, ...) {
                   
  }
   if (is.na(projection(x)) || is.na(projection(query)) || projection(x) != projection(query)) {
-    warning(sprintf("projections not the same \n    x: %s\nquery: %s", projection(x), projection(query)), call. = FALSE)
+    message(sprintf("projections not the same \n    x: %s\nquery: %s", projection(x), projection(query)), call. = FALSE)
   }
   if (inherits(query, "SpatialPolygons")) {
-    warning("cellnumbers is very slow for SpatialPolygons, consider conversion with 'sf::st_as_sf'", immediate. = TRUE)
+    message("cellnumbers is very slow for SpatialPolygons, consider conversion with 'sf::st_as_sf'", immediate. = TRUE)
     a <- cellFromPolygon(x, query)
   }
   if (is.matrix(query) | inherits(query, "SpatialPoints")) {
