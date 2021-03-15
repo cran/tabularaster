@@ -53,7 +53,7 @@ cellnumbers.default <- function(x, query, ...) {
     ## we need this for points, mpoints
     pth <- silicate::sc_path(query)
  
-    tab <- tibble(object_ = rep(as.integer(factor(pth$object_)), pth$ncoords_), 
+    tab <- tibble(object_ = rep(as.integer(ordered(pth$object_, unique(pth$object_))), pth$ncoords_), 
                   cell_ = raster::cellFromXY(x, as.matrix(silicate::sc_coord(query)[c("x_" , "y_")])))
     return(tab)
                   
@@ -62,12 +62,12 @@ cellnumbers.default <- function(x, query, ...) {
     message(sprintf("projections not the same \n    x: %s\nquery: %s", projection(x), projection(query)), call. = FALSE)
   }
   if (inherits(query, "SpatialPolygons")) {
-    message("cellnumbers is very slow for SpatialPolygons, consider conversion with 'sf::st_as_sf'", immediate. = TRUE)
+    message("cellnumbers is very slow for SpatialPolygons, consider conversion with 'sf::st_as_sf'")
     a <- cellFromPolygon(x, query)
   }
   if (is.matrix(query) | inherits(query, "SpatialPoints")) {
     if (is.matrix(query)) stopifnot(ncol(query) >= 2)
-    a <- list(cellFromXY(x, query))
+    a <- as.list(cellFromXY(x, query))
   }
   if (inherits(query, "SpatialMultiPoints")) {
     a <- lapply(query@coords, function(xymat) cellFromXY(x, xymat))
@@ -118,23 +118,23 @@ cellnumbers.sf <- function(x, query, ...) {
 
 
 
-#' @importFrom spatstat owin as.owin
+#' @importFrom spatstat.geom owin as.owin pixellate
 as.owin.BasicRaster <- function(W, ...) {
   msk <- matrix(TRUE, nrow(W), ncol(W))
-  spatstat::owin(c(raster::xmin(W), raster::xmax(W)), c(raster::ymin(W), raster::ymax(W)), mask = msk)
+  spatstat.geom::owin(c(raster::xmin(W), raster::xmax(W)), c(raster::ymin(W), raster::ymax(W)), mask = msk)
 }
 pix <- function(psp, ras) {
-  spatstat::pixellate(psp, as.owin(ras), weights = 1)   
+  spatstat.geom::pixellate(psp, as.owin(ras), weights = 1)   
 }
 
 line_cellnumbers <- function(x, r) {
   sc <- silicate::SC0(x)
   xy <- as.matrix(silicate::sc_vertex(sc)[c("x_", "y_")])
   l <- vector("list", nrow(silicate::sc_object(sc)))
-  ow <- spatstat::owin(range(xy[,1]), range(xy[,2]))
+  ow <- spatstat.geom::owin(range(xy[,1]), range(xy[,2]))
   for (i in seq_along(l)) {
     segs <- as.matrix(do.call(rbind, sc$object$topology_[i])[c(".vx0", ".vx1")])
-    pspii <- spatstat::psp(xy[segs[,1L],1L], xy[segs[,1L],2L], 
+    pspii <- spatstat.geom::psp(xy[segs[,1L],1L], xy[segs[,1L],2L], 
                            xy[segs[,2L],1L], xy[segs[,2L],2L], window = ow)
     
       im <- (raster(pix(pspii, r)) > 0)

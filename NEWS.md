@@ -1,3 +1,9 @@
+# tabularaster 0.7.0
+
+* Fix randomizing order for sf `object_`, thanks to @CaptureOSM https://github.com/hypertidy/tabularaster/issues/29. 
+
+* Align to new spatstat 2.0.0.
+
 # tabularaster 0.6.6
 
 * Release to restore package on CRAN, archived when silicate was archived (for neglecting
