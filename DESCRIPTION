@@ -1,7 +1,7 @@
 Package: tabularaster
 Type: Package
 Title: Tidy Tools for 'Raster' Data
-Version: 0.7.0
+Version: 0.7.1
 Authors@R: c(
     person("Michael D.", "Sumner", , "mdsumner@gmail.com", c("aut", "cre"))
     )
@@ -17,7 +17,7 @@ LazyData: TRUE
 Depends: R (>= 3.2.5)
 Imports: dplyr, fasterize, magrittr, raster, silicate, spatstat.geom,
         tibble
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
 Encoding: UTF-8
 Suggests: covr, knitr, rmarkdown, testthat (>= 2.1.0), spelling
 VignetteBuilder: knitr
@@ -25,8 +25,8 @@ URL: https://github.com/hypertidy/tabularaster
 BugReports: https://github.com/hypertidy/tabularaster/issues
 Language: en-US
 NeedsCompilation: no
-Packaged: 2021-03-15 03:59:31 UTC; mdsumner
+Packaged: 2022-10-17 23:28:18 UTC; mdsumner
 Author: Michael D. Sumner [aut, cre]
 Maintainer: Michael D. Sumner <mdsumner@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-03-15 06:10:02 UTC
+Date/Publication: 2022-10-18 03:00:02 UTC
